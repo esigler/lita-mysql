@@ -1,0 +1,7 @@
+Documentation:
+  Exclude:
+    - lib/lita/handlers/mysql.rb
+
+FileName:
+  Exclude:
+    - lib/lita-mysql.rb
