@@ -43,12 +43,12 @@ information.  You will need to configure at least one database host to use
 the commands shown in 'Usage'.  You can do so by running:
 
 ```
-mysql host add <alias> <fqdn> <username> <password>
+mysql alias add <alias> <fqdn> <username> <password>
 ```
 
-**NOTE**: There is no 'default' MySQL host - if you have configured more than one
-database host, you will need to explicitly choose a host for all relevant
-commands.
+**NOTE**: There is no 'default' MySQL host, once you add more than a single alias.
+If you have configured more than one database host, you will need to explicitly
+choose a host for all relevant commands.
 
 **NOTE**: Table backup, clone, drop, restore, and truncate require <INSERT SUPER
 AWESOME THING HERE>, if you don't wish to allow these commands at all, you can disable
@@ -62,16 +62,16 @@ config.handlers.mysql.enable_stored_procedures = false
 
 ### Tables
 ```
-mysql [alias] backup <name>   - Takes a backup of table <name> on [host], requires confirmation
-mysql [alias] backup-list     - Shows all recent table backups on [host]
-mysql [alias] clone <name>    - Clones table <name> on [host], requires confirmation
-mysql [alias] drop <name>     - Drops table <name> on [host], requires confirmation
-mysql [alias] drop-list       - Shows all recent table drops on [host]
-mysql [alias] restore <name>  - Restores a backup from the list on [host], requires confirmation
-mysql [alias] table <name>    - Shows information for table <name> on [host]
-mysql [alias] tables          - Shows all tables on [host]
-mysql [alias] truncate <name> - Truncates table <name> on [host], requires confirmation
-mysql [alias] truncate-list   - Shows all recent table truncations on [host]
+mysql [alias] backup <name>   - Takes a backup of table <name> on [alias], requires confirmation
+mysql [alias] backup-list     - Shows all recent table backups on [alias]
+mysql [alias] clone <name>    - Clones table <name> on [alias], requires confirmation
+mysql [alias] drop <name>     - Drops table <name> on [alias], requires confirmation
+mysql [alias] drop-list       - Shows all recent table drops on [alias]
+mysql [alias] restore <name>  - Restores a backup from the list on [alias], requires confirmation
+mysql [alias] table <name>    - Shows information for table <name> on [alias]
+mysql [alias] tables          - Shows all tables on [alias]
+mysql [alias] truncate <name> - Truncates table <name> on [alias], requires confirmation
+mysql [alias] truncate-list   - Shows all recent table truncations on [alias]
 ```
 
 ### Queries
@@ -80,21 +80,21 @@ mysql [alias] gather          -
 mysql [alias] digest          -
 mysql [alias] digest-collect  -
 mysql [alias] digest-issue    -
-mysql [alias] explain <query> - Shows explain plan for <query> on [host]
-mysql [alias] profile <query> - Profiles <query> on [host] and shows results
+mysql [alias] explain <query> - Shows explain plan for <query> on [alias]
+mysql [alias] profile <query> - Profiles <query> on [alias] and shows results
 ```
 
 ### Statistics
 ```
 mysql [alias] cluster -
-mysql [alias] innodb  - Shows results of "status engine innodb" on [host]
+mysql [alias] innodb  - Shows results of "status engine innodb" on [alias]
 ```
 
 ### Processes
 ```
-mysql [alias] kill <pid>  - Kills process <pid> on [host], requires confirmation
-mysql [alias] kills       - Show all recent process kills on [host]
-mysql [alias] processlist - Show all running processes on [host]
+mysql [alias] kill <pid>  - Kills process <pid> on [alias], requires confirmation
+mysql [alias] kills       - Show all recent process kills on [alias]
+mysql [alias] processlist - Show all running processes on [alias]
 ```
 
 ### Configuration
