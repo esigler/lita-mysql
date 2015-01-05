@@ -5,3 +5,6 @@ Documentation:
 FileName:
   Exclude:
     - lib/lita-mysql.rb
+
+LineLength:
+  Max: 130

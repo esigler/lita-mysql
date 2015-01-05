@@ -43,7 +43,7 @@ information.  You will need to configure at least one database host to use
 the commands shown in 'Usage'.  You can do so by running:
 
 ```
-mysql host add <name> <fqdn> <username> <password>
+mysql host add <alias> <fqdn> <username> <password>
 ```
 
 **NOTE**: There is no 'default' MySQL host - if you have configured more than one
@@ -62,46 +62,46 @@ config.handlers.mysql.enable_stored_procedures = false
 
 ### Tables
 ```
-mysql [host] backup <name>   - Takes a backup of table <name> on [host], requires confirmation
-mysql [host] backup-list     - Shows all recent table backups on [host]
-mysql [host] clone <name>    - Clones table <name> on [host], requires confirmation
-mysql [host] drop <name>     - Drops table <name> on [host], requires confirmation
-mysql [host] drop-list       - Shows all recent table drops on [host]
-mysql [host] restore <name>  - Restores a backup from the list on [host], requires confirmation
-mysql [host] table <name>    - Shows information for table <name> on [host]
-mysql [host] tables          - Shows all tables on [host]
-mysql [host] truncate <name> - Truncates table <name> on [host], requires confirmation
-mysql [host] truncate-list   - Shows all recent table truncations on [host]
+mysql [alias] backup <name>   - Takes a backup of table <name> on [host], requires confirmation
+mysql [alias] backup-list     - Shows all recent table backups on [host]
+mysql [alias] clone <name>    - Clones table <name> on [host], requires confirmation
+mysql [alias] drop <name>     - Drops table <name> on [host], requires confirmation
+mysql [alias] drop-list       - Shows all recent table drops on [host]
+mysql [alias] restore <name>  - Restores a backup from the list on [host], requires confirmation
+mysql [alias] table <name>    - Shows information for table <name> on [host]
+mysql [alias] tables          - Shows all tables on [host]
+mysql [alias] truncate <name> - Truncates table <name> on [host], requires confirmation
+mysql [alias] truncate-list   - Shows all recent table truncations on [host]
 ```
 
 ### Queries
 ```
-mysql [host] gather          -
-mysql [host] digest          -
-mysql [host] digest-collect  -
-mysql [host] digest-issue    -
-mysql [host] explain <query> - Shows explain plan for <query> on [host]
-mysql [host] profile <query> - Profiles <query> on [host] and shows results
+mysql [alias] gather          -
+mysql [alias] digest          -
+mysql [alias] digest-collect  -
+mysql [alias] digest-issue    -
+mysql [alias] explain <query> - Shows explain plan for <query> on [host]
+mysql [alias] profile <query> - Profiles <query> on [host] and shows results
 ```
 
 ### Statistics
 ```
-mysql [host] cluster -
-mysql [host] innodb  - Shows results of "status engine innodb" on [host]
+mysql [alias] cluster -
+mysql [alias] innodb  - Shows results of "status engine innodb" on [host]
 ```
 
 ### Processes
 ```
-mysql [host] kill <pid>  - Kills process <pid> on [host], requires confirmation
-mysql [host] kills       - Show all recent process kills on [host]
-mysql [host] processlist - Show all running processes on [host]
+mysql [alias] kill <pid>  - Kills process <pid> on [host], requires confirmation
+mysql [alias] kills       - Show all recent process kills on [host]
+mysql [alias] processlist - Show all running processes on [host]
 ```
 
 ### Configuration
 ```
-mysql host add <name> <fqdn> <username> <password> - Adds a host with <name>, <name> must match [a-zA-Z0-9_-] (restricted to mysql_admins)
-mysql host remove <name>                           - Removes the host <name> (restricted to mysql_admins)
-mysql host list                                    - Shows all hosts
+mysql alias add <alias> <fqdn> <username> <password> - Adds a host with <alias>, <alias> must match [a-zA-Z0-9_-.] (restricted to mysql_admins)
+mysql alias remove <alias>                           - Removes the alias <alias> (restricted to mysql_admins)
+mysql alias list                                     - Shows all hosts
 ```
 
 ## License

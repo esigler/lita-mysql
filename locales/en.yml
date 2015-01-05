@@ -2,3 +2,20 @@ en:
   lita:
     handlers:
       mysql:
+        alias:
+          added: 'MySQL alias "%{a}" added'
+          does_not_exist: 'MySQL server alias "%{a}" does not exist'
+          exists: 'MySQL server alias "%{a}" already exists'
+          info: 'MySQL alias: %{a}, hostname: %{fqdn}'
+          none_defined: There are no MySQL server aliases defined
+          removed: 'MySQL server alias "%{a}" removed'
+        help:
+          alias_add:
+            syntax: mysql alias add <name> <fqdn> <username> <password>
+            desc: "Adds a host with <name>, <name> must match [a-zA-Z0-9_-.] (restricted to mysql_admins)"
+          alias_remove:
+            syntax: mysql alias remove <alias>
+            desc: Removes the alias <alias> (restricted to mysql_admins)
+          alias_list:
+            syntax: mysql alias list
+            desc: Shows all aliases
